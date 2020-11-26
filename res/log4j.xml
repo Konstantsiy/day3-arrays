@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <Appenders>
+        <Console name="ConsoleAppender" target="System.out">
+            <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} (%rms) %M %-5level %logger{6} - %msg%n"/>
+        </Console>
+        <RollingFile name="FileAppender" fileName="logs/logfile.txt" append="true"
+                     filePattern = "logs/${date:yyyy-MM-dd}/%d{dd-MM-yyyy_HH-mm}_%i.txt">
+            <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} (%rms) %M %-5level %logger{6} - %msg%n"/>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
