@@ -1,0 +1,1 @@
+15:53:43.042 [main] ERROR java.lang.Math - res/file.txt (No such file or directory)
